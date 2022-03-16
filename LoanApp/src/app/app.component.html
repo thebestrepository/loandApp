@@ -1,0 +1,4 @@
+<div class="container" >
+  <app-loan-form style="flex:1" (paymentSchedule)="onPaymentSchedule($event)"></app-loan-form>
+  <app-loan-payment-schedule style="flex:2" [scheduleData]="paymentSchedule"></app-loan-payment-schedule>
+</div>

@@ -1,0 +1,18 @@
+<div class="loanForm">
+    <form >
+        <mat-form-field appearance="outline"  >
+            <mat-label>Amount(PLN):</mat-label>
+            <input type="number" placeholder="10000" matInput [formControl]="amount">
+            <mat-error *ngIf="amount.invalid">{{getAmountErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="outline"  >
+            <mat-label>Time(years):</mat-label>
+            <input type="number" placeholder="5" matInput [formControl]="years">
+            <mat-error *ngIf="years.invalid">{{getYearsErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br/>
+        <button class="submit" mat-flat-button color="primary" (click)="getSchedule()" [disabled]="!amount.valid || years.invalid">Get schedule</button>
+        <button class="clear" mat-flat-button color="accent" (click)="clearForm()" >Clear</button>
+    </form>
+</div>
